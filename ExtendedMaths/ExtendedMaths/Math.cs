@@ -146,10 +146,8 @@ namespace ExtendedMaths
             List<int> q1List = new List<int>();
             List<int> q3List = new List<int>();
             int median;
-            double med1;
-            double med2;
-            int med3;
-            int med4;
+            int med1;
+            int med2;
             int Q1;
             double Q2;
             int Q3;
@@ -167,9 +165,7 @@ namespace ExtendedMaths
             {
                 med1 = (data.Count() / 2) - 1;
                 med2 = (data.Count() / 2);
-                med3 = Convert.ToInt32(med1);
-                med4 = Convert.ToInt32(med2);
-                Q2 = (data[med3] + data[med4]) / 2;
+                Q2 = (data[med1] + data[med2]) / 2;
 
             }
             for (int i = 0; i < (data.Count() / 2); i++)
@@ -192,10 +188,8 @@ namespace ExtendedMaths
             double median;
             int medianRound;
             int result;
-            double med1;
-            double med2;
-            int med3;
-            int med4;
+            int med1;
+            int med2;
             data.Sort();
             if (data.Count() % 2 != 0)
             {
@@ -208,9 +202,7 @@ namespace ExtendedMaths
             {
                 med1 = (data.Count() / 2) - 1;
                 med2 = (data.Count() / 2);
-                med3 = Convert.ToInt32(med1);
-                med4 = Convert.ToInt32(med2);
-                median = (data[med3] + data[med4]) / 2;
+                median = (data[med1] + data[med2]) / 2;
                 medianRound = Convert.ToInt32(median);
                 result = medianRound;
                 return result;
