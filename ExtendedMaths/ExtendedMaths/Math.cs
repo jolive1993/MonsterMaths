@@ -145,29 +145,14 @@ namespace ExtendedMaths
         {
             List<int> q1List = new List<int>();
             List<int> q3List = new List<int>();
-            int median;
-            int med1;
-            int med2;
             int Q1;
             int Q2;
             int Q3;
-            int IQR; 
-            
+            int IQR;
             data.Sort();
-            if (data.Count() % 2 != 0)
-            {
-                median = (data.Count / 2);
-                Q2 = data[median];
-                data.RemoveAt(median);
-
-            }
-            else
-            {
-                med1 = (data.Count() / 2) - 1;
-                med2 = (data.Count() / 2);
-                Q2 = (data[med1] + data[med2]) / 2;
-
-            }
+            Q2 = medianFinder(data);
+            data.Remove(Q2);
+            data.Sort();
             for (int i = 0; i < (data.Count() / 2); i++)
             {
                 q1List.Add(data[i]);
@@ -186,7 +171,6 @@ namespace ExtendedMaths
         private static int medianFinder(List<int> data)
         {
             int median;
-            int medianRound;
             int result;
             int med1;
             int med2;
