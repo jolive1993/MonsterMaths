@@ -141,5 +141,84 @@ namespace ExtendedMaths
             }
             return num1;
         }
+        public static double outlierFinder(List<int> data)
+        {
+            List<int> q1List = new List<int>();
+            List<int> q3List = new List<int>();
+            int median;
+            double med1;
+            double med2;
+            int med3;
+            int med4;
+            double finalMedian;
+            int Q1;
+            double Q2;
+            int Q3;
+            double IQR; 
+            
+            data.Sort();
+            if (data.Count() % 2 != 0)
+            {
+                median = (data.Count / 2);
+                Q2 = data[median];
+                data.RemoveAt(median);
+
+            }
+            else
+            {
+                med1 = (data.Count() / 2) - 1;
+                med2 = (data.Count() / 2);
+                med3 = Convert.ToInt32(med1);
+                med4 = Convert.ToInt32(med2);
+                Q2 = (data[med3] + data[med4]) / 2;
+
+            }
+            for (int i = 0; i < (data.Count() / 2); i++)
+            {
+                q1List.Add(data[i]);
+            }
+            for (int y = (q1List.Count); y < data.Count(); y++)
+            {
+                q3List.Add(data[y]);
+            }
+            Q1 = medianFinder(q1List);
+            Q3 = medianFinder(q3List);
+            Console.WriteLine(Q1);
+            Console.WriteLine(Q2);
+            Console.WriteLine(Q3);
+            IQR = Q3 - Q1;
+            return IQR;
+
+
+        }
+        private static int medianFinder(List<int> data)
+        {
+            double median;
+            int medianRound;
+            int result;
+            double med1;
+            double med2;
+            int med3;
+            int med4;
+            data.Sort();
+            if (data.Count() % 2 != 0)
+            {
+                median = (data.Count() / 2);
+                medianRound = Convert.ToInt32(median);
+                result = data[medianRound];
+                return result;
+            }
+            else
+            {
+                med1 = (data.Count() / 2) - 1;
+                med2 = (data.Count() / 2);
+                med3 = Convert.ToInt32(med1);
+                med4 = Convert.ToInt32(med2);
+                median = (data[med3] + data[med4]) / 2;
+                medianRound = Convert.ToInt32(median);
+                result = medianRound;
+                return result;
+            }
+        }
     }
 }

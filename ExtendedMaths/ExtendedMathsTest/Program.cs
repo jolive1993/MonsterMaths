@@ -19,7 +19,17 @@ namespace ExtendedMathsTest
             //string garbage = "1078";
             //ExtendedMaths.Math.romanConverter(ref garbage);
             //Console.WriteLine(garbage);
-            var whatever = ExtendedMaths.Math.euclidean(210, 45);
+            //var whatever = ExtendedMaths.Math.euclidean(210, 45);
+            //Console.WriteLine(whatever);
+            //Console.ReadLine();
+            List<int> garbage = new List<int>();
+            garbage.Add(7);
+            garbage.Add(5);
+            garbage.Add(23);
+            garbage.Add(32);
+            garbage.Add(43);
+            garbage.Add(48);
+            var whatever = ExtendedMaths.Math.outlierFinder(garbage);
             Console.WriteLine(whatever);
             Console.ReadLine();
         }
