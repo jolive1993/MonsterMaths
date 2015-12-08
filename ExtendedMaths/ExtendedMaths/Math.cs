@@ -154,8 +154,8 @@ namespace ExtendedMaths
             if (data.Count() % 2 != 0)
             {
                 data.Remove(Q2);
+                data.Sort();
             }
-            data.Sort();
             for (int i = 0; i < (data.Count() / 2); i++)
             {
                 q1List.Add(data[i]);
