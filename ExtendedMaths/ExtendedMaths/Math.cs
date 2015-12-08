@@ -141,7 +141,7 @@ namespace ExtendedMaths
             }
             return num1;
         }
-        public static double outlierFinder(List<int> data)
+        public static int outlierFinder(List<int> data)
         {
             List<int> q1List = new List<int>();
             List<int> q3List = new List<int>();
@@ -149,9 +149,9 @@ namespace ExtendedMaths
             int med1;
             int med2;
             int Q1;
-            double Q2;
+            int Q2;
             int Q3;
-            double IQR; 
+            int IQR; 
             
             data.Sort();
             if (data.Count() % 2 != 0)
@@ -185,7 +185,7 @@ namespace ExtendedMaths
         }
         private static int medianFinder(List<int> data)
         {
-            double median;
+            int median;
             int medianRound;
             int result;
             int med1;
@@ -194,8 +194,7 @@ namespace ExtendedMaths
             if (data.Count() % 2 != 0)
             {
                 median = (data.Count() / 2);
-                medianRound = Convert.ToInt32(median);
-                result = data[medianRound];
+                result = data[median];
                 return result;
             }
             else
@@ -203,9 +202,7 @@ namespace ExtendedMaths
                 med1 = (data.Count() / 2) - 1;
                 med2 = (data.Count() / 2);
                 median = (data[med1] + data[med2]) / 2;
-                medianRound = Convert.ToInt32(median);
-                result = medianRound;
-                return result;
+                return median;
             }
         }
     }
