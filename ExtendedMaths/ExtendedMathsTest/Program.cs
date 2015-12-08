@@ -28,7 +28,6 @@ namespace ExtendedMathsTest
             garbage.Add(23);
             garbage.Add(32);
             garbage.Add(43);
-            garbage.Add(48);
             var whatever = ExtendedMaths.Math.outlierFinder(garbage);
             Console.WriteLine(whatever);
             Console.ReadLine();

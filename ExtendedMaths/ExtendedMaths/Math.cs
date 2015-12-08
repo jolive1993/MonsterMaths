@@ -150,7 +150,6 @@ namespace ExtendedMaths
             double med2;
             int med3;
             int med4;
-            double finalMedian;
             int Q1;
             double Q2;
             int Q3;
@@ -183,9 +182,6 @@ namespace ExtendedMaths
             }
             Q1 = medianFinder(q1List);
             Q3 = medianFinder(q3List);
-            Console.WriteLine(Q1);
-            Console.WriteLine(Q2);
-            Console.WriteLine(Q3);
             IQR = Q3 - Q1;
             return IQR;
 
