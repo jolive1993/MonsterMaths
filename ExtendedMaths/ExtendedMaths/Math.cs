@@ -151,7 +151,10 @@ namespace ExtendedMaths
             int IQR;
             data.Sort();
             Q2 = medianFinder(data);
-            data.Remove(Q2);
+            if (data.Count() % 2 != 0)
+            {
+                data.Remove(Q2);
+            }
             data.Sort();
             for (int i = 0; i < (data.Count() / 2); i++)
             {
